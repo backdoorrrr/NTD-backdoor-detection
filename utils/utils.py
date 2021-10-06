@@ -8,8 +8,8 @@ import numpy as np
 
 
 #---------------------------------#
-#   图片预处理
-#   高斯归一化
+#   Picture pre-processing
+#   Gauss normalizing
 #---------------------------------#
 def pre_process(x):
     if x.ndim == 4:
@@ -28,14 +28,14 @@ def pre_process(x):
     return y
     
 #---------------------------------#
-#   l2标准化
+#   l2 normalization
 #---------------------------------#
 def l2_normalize(x, axis=-1, epsilon=1e-10):
     output = x / np.sqrt(np.maximum(np.sum(np.square(x), axis=axis, keepdims=True), epsilon))
     return output
     
 #---------------------------------#
-#   计算128特征值
+#   Calculate 128-dim feature vector
 #---------------------------------#
 def calc_128_vec(model,img):
     face_img = pre_process(img)
@@ -45,7 +45,7 @@ def calc_128_vec(model,img):
     return pre
 
 #---------------------------------#
-#   计算人脸距离
+#   Calculated face distance
 #---------------------------------#
 def face_cosdistance(type, face_encodings, face_to_compare):
     if len(face_encodings) == 0:
