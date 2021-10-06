@@ -136,16 +136,16 @@ def InceptionResNetV1(input_shape=(160, 160, 3),
                                     block_idx=block_idx)
     x = _inception_resnet_block(x,scale=1.,activation=None,block_type='Block8',block_idx=6)
 
-    # 平均池化
+    # AveragePooling
     x = GlobalAveragePooling2D(name='AvgPool')(x)
     x = Dropout(1.0 - dropout_keep_prob, name='Dropout')(x)
-    # 全连接层到128
+    # All connected to 128
     x = Dense(classes, use_bias=False, name='Bottleneck')(x)
     bn_name = _generate_layer_name('BatchNorm', prefix='Bottleneck')
     x = BatchNormalization(momentum=0.995, epsilon=0.001, scale=False,
                            name=bn_name)(x)
 
-    # 创建模型
+    # create the model
     model = Model(inputs, x, name='inception_resnet_v1')
 
     return model
