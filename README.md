@@ -2,7 +2,7 @@
 (NTD for Face Recognition)
 
 ---
-> ```@inproceedings{li2021ntd,
+> @inproceedings{li2021ntd,
 >   title={NTD: Non-Transferability enabled Deep Learning Backdoor Detection},
 >   author={Li, Yinshan and Ma, Hua and Zhang, Zhi and Gao, Yansong and Abuadbba, Alsharif and Xue, Minhui and Fu, Anmin and Zheng, Yifeng and Al-Sarawi, Said F and Abbott, Derek},
 >   journal={IEEE Transactions on Information Forensics and Security},
